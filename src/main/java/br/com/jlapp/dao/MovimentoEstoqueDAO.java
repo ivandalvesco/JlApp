@@ -40,7 +40,7 @@ public class MovimentoEstoqueDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<MovimentoEstoque> findAll() {
-		return em.createQuery("FROM "+ MovimentoEstoque.class.getName()).getResultList();
+		return em.createQuery("SELECT m FROM tb_movimento_estoque m order by m.id ", MovimentoEstoque.class).getResultList();
 	}
 	
 	public void insert(MovimentoEstoque m) {

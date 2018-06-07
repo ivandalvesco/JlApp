@@ -13,84 +13,29 @@
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
-
+<repositories>
+		<repository>
+			<id>oss.sonatype.org</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+	</repositories>
  <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>3.8.1</version>
-      <scope>test</scope>
-    </dependency>
-<dependency> 
-	<groupId>org.hibernate</groupId> 
-	<artifactId>hibernate-agroal</artifactId> 
-	<version>5.3.1.Final</version> 
-	<type>pom</type> 
+<dependency>
+    <groupId>org.eclipse.persistence</groupId>
+    <artifactId>org.eclipse.persistence.jpa</artifactId>
+    <version>2.7.1</version>
 </dependency>
 <dependency>
-    <groupId>org.postgresql</groupId>
+    <groupId>junit</groupId>
+    <artifactId>junit</artifactId>
+    <version>4.12</version>
+    <scope>test</scope>
+</dependency>
+<dependency>
+    <groupId>postgresql</groupId>
     <artifactId>postgresql</artifactId>
-    <version>42.2.2</version>
-</dependency>
-<dependency>
-    <groupId>org.hibernate.javax.persistence</groupId>
-    <artifactId>hibernate-jpa-2.1-api</artifactId>
-    <version>1.0.2.Final</version>
-</dependency>
-<dependency>
-    <groupId>antlr</groupId>
-    <artifactId>antlr</artifactId>
-    <version>2.7.7</version>
-</dependency>
-<dependency>
-    <groupId>dom4j</groupId>
-    <artifactId>dom4j</artifactId>
-    <version>1.6.1</version>
-</dependency>
-<dependency>
-    <groupId>org.hibernate.common</groupId>
-    <artifactId>hibernate-commons-annotations</artifactId>
-    <version>5.0.3.Final</version>
-</dependency>
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-core</artifactId>
-    <version>5.3.1.Final</version>
-</dependency>
-<dependency>
-    <groupId>org.hibernate</groupId>
-    <artifactId>hibernate-entitymanager</artifactId>
-    <version>5.3.1.Final</version>
-</dependency>
-<dependency>
-    <groupId>org.hibernate.javax.persistence</groupId>
-    <artifactId>hibernate-jpa-2.1-api</artifactId>
-    <version>1.0.2.Final</version>
-</dependency>
-<dependency>
-    <groupId>org.jboss</groupId>
-    <artifactId>jandex</artifactId>
-    <version>2.0.5.Final</version>
-</dependency><dependency>
-    <groupId>org.javassist</groupId>
-    <artifactId>javassist</artifactId>
-    <version>3.22.0-GA</version>
-</dependency>
-<dependency>
-    <groupId>commons-logging</groupId>
-    <artifactId>commons-logging</artifactId>
-    <version>1.2</version>
-</dependency>
-<dependency>
-    <groupId>org.jboss.logging</groupId>
-    <artifactId>jboss-logging-annotations</artifactId>
-    <version>2.1.0.Final</version>
-    <scope>provided</scope>
-</dependency>
-<dependency>
-    <groupId>org.jboss.spec.javax.transaction</groupId>
-    <artifactId>jboss-transaction-api_1.2_spec</artifactId>
-    <version>1.1.1.Final</version>
+    <version>9.1-901-1.jdbc4</version>
 </dependency>
 
   </dependencies>

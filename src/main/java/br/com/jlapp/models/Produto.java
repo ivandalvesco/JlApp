@@ -5,15 +5,18 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
-@Entity
+@Entity(name="tb_produto")
 @Table(name = "tb_produto")
 public class Produto {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="gen_produto")
+    @SequenceGenerator(name="gen_produto", sequenceName="gen_produto", allocationSize=1)
 	private int id;
 	
 	@Column
@@ -58,5 +61,7 @@ public class Produto {
 		this.valor = valor;
 	}
 	
-	
+	public void setId(int id) {
+		this.id = id;
+	}
 }

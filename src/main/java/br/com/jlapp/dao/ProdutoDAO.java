@@ -40,7 +40,7 @@ public class ProdutoDAO {
 	
 	@SuppressWarnings("unchecked")
 	public List<Produto> findAll() {
-		return em.createQuery("FROM "+ Produto.class.getName()).getResultList();
+		return em.createQuery("SELECT p FROM tb_produto p order by p.id ", Produto.class).getResultList();
 	}
 	
 	public void insert(Produto p) {
@@ -86,10 +86,11 @@ public class ProdutoDAO {
 		}
 	}
 	
-	public Produto findByDesc(String desc) {
+	public List<Produto> findByDesc(String desc) {
 		
-		em.find
+		List<Produto> results = em.createQuery("SELECT p FROM tb_produto p where p.descricao like '"+desc+"'", Produto.class).getResultList();
 		
+		return results;
 	}
 	
 }

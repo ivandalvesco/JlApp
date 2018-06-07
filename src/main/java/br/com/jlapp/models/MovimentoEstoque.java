@@ -5,24 +5,28 @@ import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.PrimaryKeyJoinColumn;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
 import br.com.jlapp.enums.TipoMov;
 
 
-@Entity
+@Entity(name="tb_movimento_estoque")
 @Table(name="tb_movimento_estoque")
 public class MovimentoEstoque {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY, generator="gen_movimento_estoque")
+    @SequenceGenerator(name="gen_movimento_estoque", sequenceName="gen_movimento_estoque", allocationSize =1)
 	private int id;
 	
 	@ManyToOne
-	@JoinColumn(name="id")
+	@JoinColumn(name = "produto", columnDefinition = "id")
 	private Produto produto;
 	
 	@Column
@@ -32,7 +36,7 @@ public class MovimentoEstoque {
 	private int quantidade;
 	
 	@Column
-	private TipoMov tipo_movimentacao;
+	private String tipo_movimentacao;
 	
 	
 	public int getId() {
@@ -51,10 +55,10 @@ public class MovimentoEstoque {
 	public void setQuantidade(int quantidade) {
 		this.quantidade = quantidade;
 	}
-	public TipoMov getTipo_movimentacao() {
+	public String getTipo_movimentacao() {
 		return tipo_movimentacao;
 	}
-	public void setTipo_movimentacao(TipoMov tipo_movimentacao) {
+	public void setTipo_movimentacao(String tipo_movimentacao) {
 		this.tipo_movimentacao = tipo_movimentacao;
 	}
 

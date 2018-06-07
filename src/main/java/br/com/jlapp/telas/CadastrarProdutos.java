@@ -111,6 +111,8 @@ public class CadastrarProdutos extends javax.swing.JFrame{
 		dao = new ProdutoDAO();
 		dao.insert(p);
 		JOptionPane.showMessageDialog(null, "Cadastro realizado");
+		setVisible(false);
+		dispose();
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
