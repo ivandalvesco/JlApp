@@ -6,6 +6,10 @@ import java.awt.Label;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowFocusListener;
 import java.util.List;
 
 import javax.swing.JButton;
@@ -62,6 +66,19 @@ public class ControleEstoque extends JFrame {
 			
 			public void actionPerformed(ActionEvent e) {
 				CadastrarMovimentacao m = new CadastrarMovimentacao();
+				
+			}
+		});
+		
+		this.addWindowFocusListener(new WindowFocusListener() {
+			
+			public void windowLostFocus(WindowEvent arg0) {
+				// TODO Auto-generated method stub
+				
+			}
+			
+			public void windowGainedFocus(WindowEvent arg0) {
+				fillTable();
 				
 			}
 		});
