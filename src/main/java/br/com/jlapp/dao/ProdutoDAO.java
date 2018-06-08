@@ -93,4 +93,13 @@ public class ProdutoDAO {
 		return results;
 	}
 	
+	
+	public void findProdutosBaixoEstoque() {
+		try {
+			em.getTransaction().begin();
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
+	
 }
